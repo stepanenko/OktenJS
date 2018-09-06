@@ -63,7 +63,7 @@ function isNumber(array) {
 //console.log(isNumber(ex));
 
 
-// === Task 4 ===
+// === Task 5 ===
 const prices = [100,250,50,168,120,345,188];
 
 function calcAvg(array) {
@@ -80,26 +80,14 @@ function calcAvg(array) {
 }
 console.log(calcAvg(prices))
 
-// === Task 4 (shorter solution) ===
+// === Task 5 (shorter solution) ===
 
 function avg(array) {
-  let avg = array.reduce((a,b) => a + b) / array.length;
+  let avg = array.reduce((a,b) => a + b, 0) / array.length;
   console.log('Average is: ');
   return avg
 }
 console.log(avg(prices))
-
-
-
-// WHY ???
-
-// let t = [5,2,3];
-// t.forEach(function(e) {
-//   e = e + 2
-//   console.log(e)
-// });
-// console.log(t)
-
 
 
   </script>
