@@ -75,12 +75,19 @@ function calcAvg(array) {
     avg = sum / array.length;
   }
   
-  console.log('Average proce is: ');
+  console.log('Average price is: ');
   return avg;
 }
 console.log(calcAvg(prices))
 
+// === Task 4 (shorter solution) ===
 
+function avg(array) {
+  let avg = array.reduce((a,b) => a + b) / array.length;
+  console.log('Average is: ');
+  return avg
+}
+console.log(avg(prices))
 
 
 
