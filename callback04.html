@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+// === class 3
+const myArr = [4,2,6,8,8,-3,6,11,9];
+const myArr2 = [-2,20,13,7,-1];
+
+function findIndex(array, value) {
+  let index = array.indexOf(value);
+  return index;
+}
+console.log(findIndex(myArr, -3));
+  
+// === class 3, task 2:
+function sumIndex(array1, array2) {
+  let arraySum = [];
+  const len1 = array1.length;
+  const len2 = array2.length;
+  if (len1 === len2) {
+    for (let i = 0; i < len1; i++) {
+      arraySum[i] = array1[i] + array2[i];
+    }
+    return arraySum;
+  } else if (len1 > len2) {
+    for (let i = 0; i < len2; i++) {
+      arraySum.push(array1[i] + array2[i]);
+    }
+    for (let j = len2 - 1; j < len1; j++) {
+      arraySum.push(array1[j]);
+    }
+    return arraySum;
+  } else {
+    for (let i = 0; i < len1; i++) {
+      arraySum.push(array1[i] + array2[i]);
+    }
+    for (let j = len1 - 1; j < len2; j++) {
+      arraySum.push(array2[j]);
+    }
+    return arraySum;
+  }
+}
+console.log(sumIndex(myArr, myArr2));
+
+// === class 3 task 3 ===
+
+function mainFunc(a1,a2,callback) {
+  return callback(a1,a2);
+}
+
+// Adding callback:
+function addArrs(array1, array2) {
+  let arraySum = [];
+  const len1 = array1.length;
+  const len2 = array2.length;
+  if (len1 === len2) {
+    for (let i = 0; i < len1; i++) {
+      arraySum[i] = array1[i] + array2[i];
+    }
+    return arraySum;
+  } else if (len1 > len2) {
+    for (let i = 0; i < len2; i++) {
+      arraySum.push(array1[i] + array2[i]);
+    }
+    for (let j = len2 - 1; j < len1; j++) {
+      arraySum.push(array1[j]);
+    }
+    return arraySum;
+  } else {
+    for (let i = 0; i < len1; i++) {
+      arraySum.push(array1[i] + array2[i]);
+    }
+    for (let j = len1 - 1; j < len2; j++) {
+      arraySum.push(array2[j]);
+    }
+    return arraySum;
+  }
+}
+
+// Dividing callback:
+
+function divArrs(array1, array2) {
+  
+}
+
+
+
+
+console.log(mainFunc(myArr, myArr2, addArrs));
+
+
+
+  </script>
+</body>
+</html>

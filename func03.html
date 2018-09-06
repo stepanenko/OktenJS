@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>While For</title>
+    <link rel="stylesheet" href="func03.css">
+</head>
+<body>
+    <div class="first">
+        <button onclick="task1()">Task 1</button>
+        <button onclick="task2()">Task 2</button>
+        <button onclick="task3()">Task 3</button>
+        <button onclick="task4()">Task 4</button>
+        <button onclick="task5()">Task 5</button>
+
+    </div>
+    <div class="first bg-grey">
+        <button onclick="task6()">Task 6</button>
+        <button onclick="task7()">Task 7</button>
+        <button onclick="task8()">Task 8</button>
+        <button onclick="task9()">Task 9</button>
+        <button onclick="task10()">Task 10</button>
+    </div>
+
+
+
+    <script>
+        function task1(){
+            const a = +prompt("Enter A value:");
+            const b = +prompt("Enter B value:");
+            const c = +prompt("Enter C value:");
+            console.log(`Min number is: ${Math.min(a,b,c)}`);
+            // if (a==b && a==c) console.log("All numbers are equal");
+            //     else if (a==b){
+            //         if (a<c) console.log("Min numberss are A and B:",a,b);
+            //         else console.log("A = B but C is less");
+            //     }
+            //     else if (a==c){
+            //         if (a<b) console.log("Min numberss are A and C:",a,c);
+            //         else console.log("A = C but B is less");
+            //     }
+            //     else if (b==c){
+            //         if (b<a) console.log("Min numberss are B and C:",b,c);
+            //         else console.log("B = C but A is less");
+            //     }
+            // if (a<b && a<c) console.log("Min number is A: ",a);
+            // if (b<a && b<c) console.log("Min number is B: ",b);
+            // if (c<a && c<b) console.log("Min number is C: ",c);
+        }
+        
+        function task2(){
+            const a = +prompt("Enter A value:");
+            const b = +prompt("Enter B value:");
+            const c = +prompt("Enter C value:");
+
+            let max = Math.max(a,b,c);
+
+            console.log("Max number is: ",max)
+        }
+
+        function task3(){
+            const arr = [];
+            let rep = true;
+            do {
+              let n = +prompt('Enter value:');
+              arr.push(n);
+              rep = confirm("Do you need more values?");
+            } while (rep);
+            
+            let max = Math.max(...arr);
+            console.log('Your max value is: ',max);
+
+            return console.log('Min is: ', Math.min(...arr));
+        }
+
+        function task4(){
+            const arr = [];
+            arr.length = +prompt('Enter Array Length: ',0);
+
+            for (let i = 0; i<arr.length; i++){
+                arr[i] = prompt('Enter value: ');
+            }
+
+            console.log(`Your Array is: `, arr);
+        }
+        
+        function task5(){
+            const arr1 = [3,5,8,23,12,-7,0,5];
+            console.log('Our sample array is:');
+            console.table(arr1);
+            console.log('And its max value is: ', Math.max(...arr1));
+            console.log('And its min value is: ', Math.min(...arr1))
+        }
+        
+        function task6(){
+            const arr1 = [3,5,8,23,12,-7,0,5];
+            
+            function outarray(arr, callback) {
+                callback(arr);
+            }
+            function forward(array) {
+                for (let i = 0; i < array.length; i++) {
+                  console.log(array[i])
+                }
+            }
+            function backward(array) {
+                for (let i = array.length - 1; i >= 0; i--) {
+                  console.log(array[i])
+                }
+            }
+            return outarray(arr1, forward)
+        }
+
+        function task7() {
+            // === Output Array Function ===
+            someArray = [1,4,2,5,0];
+
+            function outArray(array, callback) {
+            callback(array);
+            }
+            outArray(someArray, arr => arr.forEach(x => console.log(x)))
+        }
+
+        function task8() {
+            // === Create Random Array and output it ===
+            function genArr(len, range, action){
+                const randomArray = [];
+                for (let i = 0; i < len; i++){
+                    let random = Math.floor(Math.random() * range)
+                    randomArray.push(random);
+                }
+                return console.log(randomArray);
+            }
+            genArr(10, 1000);
+        }
+        
+        function task9() {
+            // === Find Max Value of Array ===
+            function genArr(len, range, action){
+                const randomArray = [];
+                for (let i = 0; i < len; i++){
+                    let random = Math.floor(Math.random() * range)
+                    randomArray.push(random);
+                }
+                if (arguments[2] != undefined) {
+                    action(randomArray);
+                }
+                return console.log(randomArray);
+            }
+            // Calling function:
+            genArr(10, 1000, findMax);
+
+            // Callback description:
+            function findMax(array) {
+              const max = Math.max(...array);
+              return console.log('Max value is: ', max)
+            }
+        }
+
+        function task10() {
+            // === Find Sum of Array Items ===
+            function genArr(len, range, action){
+                const randomArray = [];
+                for (let i = 0; i < len; i++){
+                    let random = Math.floor(Math.random() * range)
+                    randomArray.push(random);
+                }
+                if (arguments[2] != undefined) {
+                    action(randomArray);
+                }
+                return console.log(randomArray);
+            }
+            // Calling function:
+            genArr(10, 1000, addItems);
+
+            // Callback description:
+            function addItems(array) {
+              let total = 0;
+              for (let el of array) {
+                total = total + el;
+              }
+              return console.log('Sum of array items is: ', total);
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

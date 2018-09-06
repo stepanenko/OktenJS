@@ -1,0 +1,84 @@
+body {
+    background: #6b96c7;
+    margin: 15px;
+}
+.first {
+    background: #3d77b9;
+    width: 160px;
+    float: left;
+}
+.second {
+    background: #5d6975;
+    width: 160px;
+    float: left;
+}
+button {
+    display: block;
+    padding: 10px;
+    margin: 15px;
+    width: 130px;
+}   
+button:after {
+    color: silver;
+    position: absolute;
+    display:none;
+    top: 15px;
+    left: 355px;
+    width: 300px;
+    padding: 5px;
+    background: #395e88;
+}
+button:hover:after {
+    display: block;
+}
+button[onclick="task1()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 1. Перебрати його циклом while";
+}
+button[onclick="task2()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 2. перебрати його циклом for";
+}
+button[onclick="task3()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 3. перебрати циклом while та вивести  числа тільки з непарним індексом";
+}
+button[onclick="task4()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 4. перебрати циклом for та вивести  числа тільки з непарним індексом";
+}
+button[onclick="task5()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 5. перебрати циклом while та вивести  числа тільки парні  значення ";
+}
+button[onclick="task6()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 6. перебрати циклом for та вивести  числа тільки парні  значення ";
+}
+button[onclick="task7()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 7. замінити кожне число кратне 3 на слово 'okten'";
+}
+button[onclick="task8()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 8. Вивести масив в зворотньому порядку. Reversed Array via arr.reverse():";
+}
+button[onclick="task8a()"]:after {
+    content: "Зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та: 8. Вивести масив в зворотньому порядку. Reversed Array via decrement:";
+}
+button[onclick="task9()"]:after {
+    content: "Створити пустий масив та : 1. Заповнити його 50 парними числами.";
+}
+button[onclick="task9a()"]:after {
+    content: "Створити пустий масив та : 1. Заповнити його 50 парними числами. Created Array with 50th EVEN values via %";
+}
+button[onclick="task9b()"]:after {
+    content: "Створити пустий масив та : 1. Заповнити його 50 парними числами. Created Array with 50th EVEN values via .push:";
+}
+button[onclick="task9c()"]:after {
+    content: "Створити пустий масив та : 1. Заповнити його 50 непарними числами. Created Array with 50th ODD values via .push:";
+}
+button[onclick="task10()"]:after {
+    content: "1. используя Math.random заполнить массив из ??? элементов. диапазон рандома ??? до ???.";
+}
+button[onclick="task11()"]:after {
+    content: "1. используя Math.random заполнить массив из ??? элементов. Вывести на консоль  каждый третий елемент";
+}
+button[onclick="task12()"]:after {
+    content: "1. используя Math.random заполнить массив из ??? элементов. Вывести на консоль  каждый третий елемент но при условии что он имеет парное значение.";
+}
+button[onclick="task13()"]:after {
+    content: "1. используя Math.random заполнить массив из ??? элементов. Вывести на консоль  каждый третий елемент но при условии что он имеет парное значение и записать их в другой массив.";
+}

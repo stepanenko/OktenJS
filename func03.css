@@ -1,0 +1,61 @@
+body {
+    background: #6b96c7;
+    margin: 15px;
+}
+.first {
+    background: #3d77b9;
+    width: 160px;
+    float: left;
+}
+.bg-grey {
+    background: #5d6975;
+}
+button {
+    display: block;
+    padding: 10px;
+    margin: 15px;
+    width: 130px;
+}   
+button:after {
+    color: silver;
+    position: absolute;
+    display:none;
+    top: 15px;
+    left: 355px;
+    width: 300px;
+    padding: 5px;
+    background: #395e88;
+}
+button:hover:after {
+    display: block;
+}
+button[onclick="task1()"]:after {
+    content: "створити метод який : приймає три числа та виводить та повертає найменьше.";
+}
+button[onclick="task2()"]:after {
+    content: "...приймає три числа та виводить та повертає найбільше.";
+}
+button[onclick="task3()"]:after {
+    content: "...приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше";
+}
+button[onclick="task4()"]:after {
+    content: "...виводить масив";
+}
+button[onclick="task5()"]:after {
+    content: "...повертає найбільше і найменше число з масиву";
+}
+button[onclick="task6()"]:after {
+    content: "...виводить масив, але напрямок вивденння(сходження\ спадання) визначається колбеком";
+}
+button[onclick="task7()"]:after {
+    content: "Class: створити функцію яка виводить масив";
+}
+button[onclick="task8()"]:after {
+    content: "2. ...яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію.";
+}
+button[onclick="task9()"]:after {
+    content: "3. ...яка знаходить найбільше число в масиві.Для створення масиву використати попередню функцію";
+}
+button[onclick="task10()"]:after {
+    content: "4. ...яка скаладає значення елементів масиву та повертає його.";
+}
