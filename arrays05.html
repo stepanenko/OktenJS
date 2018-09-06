@@ -7,10 +7,10 @@
   <title>Document</title>
 </head>
 <body>
-  <script>
 
-  // task 1
-  
+  <script>
+  // === Task 1 ===
+
     function arrGen() {
       let arr = [];
       let n = 0;
@@ -23,6 +23,7 @@
 }
   //console.log(arrGen());
 
+
 // === Task 2 ===
 function random() {
   const ranArr = [];
@@ -32,11 +33,10 @@ function random() {
   }
   return ranArr;
 }
-
 //console.log(random());
 
-// === Task 3 ===
 
+// === Task 3 ===
 function mult5(array) {
   let modArray = array.map(function(el) {
     return el * 5;
@@ -60,14 +60,28 @@ function isNumber(array) {
   }
   return numbers;
 }
-console.log(isNumber(ex));
+//console.log(isNumber(ex));
 
 
 // === Task 4 ===
 const prices = [100,250,50,168,120,345,188];
+
 function calcAvg(array) {
+  let avg = 0;
+  const sum = array.reduce(function(a,b) {
+    return a + b;
+  },0)
+  if (sum !== 0) {
+    avg = sum / array.length;
+  }
   
+  console.log('Average proce is: ');
+  return avg;
 }
+console.log(calcAvg(prices))
+
+
+
 
 
 // WHY ???
@@ -78,9 +92,6 @@ function calcAvg(array) {
 //   console.log(e)
 // });
 // console.log(t)
-
-
-
 
 
 
