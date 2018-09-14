@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Objects</title>
+</head>
+<body>
+<script>
+
+class Car {
+  constructor (maxSpeed, model, vendor) {
+    this.maxSpeed = maxSpeed;
+    this.model = model;
+    this.vendor = vendor;
+  }
+
+  carInfo () {
+    let info = `Max speed: ${this.maxSpeed}. Model: ${this.model}. Vendor: ${this.vendor}.`
+    console.log(info);
+  }
+}
+
+class Sport extends Car {
+  constructor(maxSpeed, accel, model, vendor) {
+    super(maxSpeed, model, vendor);
+    this.accel = accel;
+  }
+  carInfo () {
+    super.carInfo();
+    let info = `Acceleration: ${this.accel}`
+    console.log(info);
+  }
+  
+}
+
+const bmw = new Car(260, 'x7', 'BMW');
+// console.log(bmw);
+// bmw.carInfo();
+
+const lexus = new Sport(310, 280, 'Prima', 'Lexus');
+console.log(lexus);
+lexus.carInfo();
+
+//new Sport(55, 55,'Prima', 'Lexus').carInfo();  // it works
+
+
+
+
+</script>
+</body>
+</html>
