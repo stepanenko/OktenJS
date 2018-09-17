@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // ==== creating array manually 
+const tags = 
+[
+  { 
+    title: 'a',
+    action: 'creates a link',
+    attr: [
+      { name: 'href', desc: 'creates a specific address link' },
+      { name: 'target', desc: 'changes how a link is opened'}
+          ]
+  }
+];
+
+// === adding objects to array manually
+tags[1] = { 
+  title: 'div', 
+  action: 'creates a block for any content', 
+  attr: [
+    { name: 'id', desc: 'makes an id for that div element'}, 
+    { name: 'hidden', desc: 'hides an element'}
+    ]
+};
+//console.log(tags)
+
+// === using a class to add new objects to an array
+const collection = [];
+
+class Tag {
+  constructor (title, action) {
+    this.title = title;
+    this.action = action;
+    this.attributes = [];
+  }
+  push (array) {
+    array.push(this);
+  }
+  add (attr, desc) {
+    this.attributes.push({ attr, desc });
+  }
+  show () {
+    console.log(this)
+  }
+}
+
+let h1 = new Tag('h1', 'creates a header for main title');
+h1.add('accesskey', 'Provides a hint for generating a keyboard shortcut.');
+h1.add('class', 'A space-separated list of the classes of the element.');
+
+let span = new Tag('span', 'Generic inline container for phrasing content');
+span.add('contenteditable','An enumerated attribute indicating if the element should be editable by the user.');
+span.add('contextmenu', 'The id of a <menu> to use as the contextual menu for this element.')
+
+const input = new Tag('input', 'specifies an input field where the user can enter data');
+input.add('draggable','An enumerated attribute indicating whether the element can be dragged, using the Drag and Drop API.');
+
+const form = new Tag('form', 'defines a form that is used to collect user input:');
+form.add('action', 'defines the action to be performed when the form is submitted');
+form.add('target','specifies if the submitted result will open in a new browser tab, a frame, or in the current window.');
+
+//adding our tags to an array "collection"
+span.push(collection);
+input.push(collection);
+form.push(collection);
+h1.push(collection);
+
+console.log(collection)
+
+// ======== TASK 2 ==========
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
