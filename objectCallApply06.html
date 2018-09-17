@@ -72,14 +72,57 @@ input.push(collection);
 form.push(collection);
 h1.push(collection);
 
-console.log(collection)
+const col = JSON.stringify(collection, '', 2);
+// console.log(col);
 
 // ======== TASK 2 ==========
 
+class Car {
+  constructor(title, brand, year, maxSpeed) {
+    this.title = title;
+    this.brand = brand;
+    this.year = year;
+    this.maxSpeed = maxSpeed;
+  }
+  drive() {
+    console.log(`${this.title} is DRIVING!!!`)
+  }
+}
 
+function Vehicle (title, brand, year) {
+  this.title = title;
+  this.brand = brand;
+  this.year = year;
+  this.drive = function (input) {
+    console.log(`${this.title} drives! ${input}`)
+  }
+}
 
+const BMW = new Vehicle('x7', 'BMW', 2017);
+// console.log(BMW);
+// BMW.drive();
+const renault = new Car('Megane', 'Renault', 2011, 240);
+// renault.drive();
 
+let car = {
+  title: '808',
+  brand: 'Peugeot',
+  year: 2016
+}
+car = JSON.stringify(car, '?', 2);
+console.log(car);
+car = JSON.parse(car);
+// console.log(car);
 
+BMW.drive.call(car, 'some text');
+renault.drive.apply(car, ['some text']);
+const carDrives = BMW.drive.bind(car, 'some text');
+const carDr = renault.drive.bind(car);
+
+carDrives();
+carDr();
+
+// ============== TASK 3 ================
 
 
 </script>
