@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM</title>
+  <style>
+      table {
+          border-collapse: collapse;
+      }
+      td {
+          border: 1px solid black;
+          padding: 15px;
+      }
+      body {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #div1 {
+        height: 100vh;
+        flex-grow: 1;
+        background: #c2a177;
+      }
+      section {
+        height: 100vh;
+        flex-grow: 2;
+        background: #9ac3bc
+      }
+      #div2 {
+        height: 100vh;
+        flex-grow: 1;
+        background: #b982be
+      }
+      #top {
+        width: 100vw;
+        background: #c2c794;
+        height: 100px;
+      }
+      form {
+        margin: 5px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        transform: translate(-50%, -120%)
+      }
+      input {
+        padding: 7px;
+      }
+      button {
+        padding: 20px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+      }
+  </style>
+</head>
+
+<body>
+  <header id="top">
+    <form action="">
+      <label for="input1">Input 1</label>
+      <input type="text" id="input1">
+      <label for="input2">Input 2</label>
+      <input type="text" id="input2">
+    </form>
+    
+    <form action="">
+      <label for="input3">Input 3</label>
+      <input type="text" id="input3">
+      <label for="input4">Input 4</label>
+      <input type="text" id="input4">
+    </form>
+    
+    <button id="btn">READ</button>
+  </header>
+
+  <div id="div1"></div>
+  <section id="section"></section>
+  <div id="div2"></div>
+
+
+<script>
+
+// ======= create TABLE =======
+function tableCreate (a, b, el) {
+
+    const table = document.createElement('table');
+    
+    for (let i = 0; i < a; i++) {
+        const tr = document.createElement('tr');
+        for (let j = 0; j < b; j++) {
+            const td = document.createElement('td');
+            td.textContent = "cell";
+            tr.appendChild(td);
+        }
+        table.appendChild(tr);
+    }
+    el.appendChild(table);
+}
+    
+tableCreate(8, 5, section);     // Works also on div1 and div2 !
+
+// ===== READ from INPUTS ======
+
+const btn = document.querySelector('button');
+
+btn.onclick = function () {
+  const input1 = document.querySelectorAll('input')[0].value;
+  const input2 = document.querySelectorAll('input')[1].value;
+  const input3 = document.querySelectorAll('input')[2].value;
+  const input4 = document.querySelectorAll('input')[3].value;
+  const array = {input1, input2, input3, input4};
+  console.log(array)
+} 
+
+// ===== LOOKING FOR ELEMENTS =====
+
+const idElem = document.querySelectorAll('*[id]');
+let ids = Array.from(idElem);
+for(let elem of ids) {
+  console.log(elem);
+}
+
+const para = document.getElementsByTagName('p');
+for (let p of para) {
+  p.textContent = "hello oktenweb!";
+}
+
+const divs = document.getElementsByTagName('div');
+for (let div of divs) {
+  div.style.backgroundColor = "red"
+}
+
+</script>
+</body>
+</html>
