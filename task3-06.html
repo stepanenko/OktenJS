@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+function Pop(name, age, size) {
+  this.name = name;
+  this.age = age;
+  this.size = size;
+}
+
+const mary = new Pop('Mary', 26, 36);
+const tammy = new Pop('Tammy', 30, 37);
+const olivia = new Pop('Olivia', 24, 35);
+const caren = new Pop('caren', 22, 34);
+
+const prince = {
+  name: 'Prince',
+  age: 31,
+  shoeSize: 36,
+  look(pop) {
+    if (pop.size === 36) {
+      console.log(`${pop.name }`)
+    }
+  }
+}
+
+
+
+
+
+</script>
+</body>
+</html>
