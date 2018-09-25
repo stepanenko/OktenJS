@@ -122,8 +122,33 @@ const carDr = renault.drive.bind(car);
 carDrives();
 carDr();
 
-// ============== TASK 3 ================
 
+// ============== TASK 3 ================
+function Pop(name, age, size) {
+  this.name = name;
+  this.age = age;
+  this.size = size;
+}
+
+const mary = new Pop('Mary', 26, 36);
+const tammy = new Pop('Tammy', 30, 37);
+const olivia = new Pop('Olivia', 24, 35);
+const caren = new Pop('caren', 22, 34);
+
+const prince = {
+  name: 'Prince',
+  age: 31,
+  shoeSize: 36,
+  lookUp(...pop) {
+    let result = 'She is not here';
+    pop.forEach(p => {
+      if (p.size === 36) result = `Your princess is ${p.name}!`;
+    })
+    return console.log(result);
+  }
+}
+
+prince.lookUp(tammy, olivia, mary, caren)
 
 </script>
 </body>

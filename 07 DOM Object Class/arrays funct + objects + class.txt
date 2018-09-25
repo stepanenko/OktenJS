@@ -1,0 +1,34 @@
+   let cars = [
+                new Car("subaru", "wrx", 2010, "blue", "sedan", "ej204x", 2, 400),
+                new Car("subaru", "legacy", 2007, "silver", "sedan", "ez30", 3, 250),
+                new Car("subaru", "tribeca", 2011, "white", "jeep", "ej20", 2, 300),
+                new Car("subaru", "leone", 1998, "yellow", "sedan", "ez20x", 2, 140),
+                new Car("subaru", "impreza", 2014, "red", "sedan", "ej204x", 2, 200),
+                new Car("subaru", "outback", 2014, "red", "hachback", "ej204", 2, 165),
+                new Car("bmw", "115", 2013, "red", "hachback", "f15", 1.5, 120),
+                new Car("bmw", "315", 2010, "white", "sedan", "f15", 1.5, 120),
+                new Car("bmw", "650", 2009, "black", "coupe", "f60", 6, 350),
+                new Car("bmw", "320", 2012, "red", "sedan", "f20", 2, 180),
+                new Car("mercedes", "e200", 1990, "silver", "sedan", "eng200", 2, 180),
+                new Car("mercedes", "e6.3", 2017, "yellow", "sedan", "amg6.3", 6, 400),
+                new Car("mercedes", "c250", 2017, "red", "sedan", "eng25", 2.5, 230),
+            ];
+			
+			Car
+				engine
+			
+			
+        filter
+        двигун більше 3х літрів
+        двигун = 2л
+        виробник мерс
+        двигун більше 3х літрів + виробник мерседес
+        двигун більше 3х літрів + виробник субару
+        сили більше ніж 300
+        сили більше ніж 300 + виробник субару
+        мотор серіі ej
+        сили більше ніж 300 + виробник субару + мотор серіі ej
+        двигун меньше 3х літрів + виробник мерседес
+        двигун більше 2л + сили більше 250
+        сили більше 250  + виробник бмв
+        зробити сотрування по кожному полю окремо
