@@ -97,29 +97,31 @@ const poma = cars
 
 // ===== SORTING =====
 
-
 const sortMake = cars.sort((a, b) => {
   if (a.make > b.make) return 1;
   if (a.make < b.make) return -1;
   return 0;
 });
+console.log(sortMake)
 
-//console.log(sortMake)
+// const sortColor = cars.sort((a, b) => {
+//   if (a.color > b.color) return 1;
+//   if (a.color < b.color) return -1;
+//   return 0;
+// });
+// console.log(sortColor)
 
-const sortModel = cars.sort((a, b) => {
-  return a.model - b.model
-});
 
-//console.log(sortModel)
-
-const sortYear = cars.sort((a, b) => {
-  return a.year - b.year
-});
+// const sortYear = cars.sort((a, b) => {
+//   return a.year - b.year
+// });
 
 //console.log(sortYear)
 
 
-// === EXAMPLE from https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort ======
+// ======== Interesting sort() EXAMPLE from: =======
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
 // массив для сортировки
 var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
 
@@ -141,7 +143,7 @@ mapped.sort(function(a, b) {
 var result = mapped.map(function(el) {
   return list[el.index];
 });
-console.log(result)
+//console.log(result)
 
 
 
