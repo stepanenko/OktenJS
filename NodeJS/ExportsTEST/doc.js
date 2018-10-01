@@ -4,3 +4,4 @@ const Ca = require('./app');
 const renault = new Ca('Renault', 2018, 3)
 console.log(renault)
 
+console.log(Ca.x)

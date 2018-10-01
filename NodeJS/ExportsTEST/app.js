@@ -21,3 +21,4 @@ const mazda = new Cars('mazda', 2019, 2)
 //console.log(mazda);
 
 module.exports = Cars;
+module.exports.x = mazda;
