@@ -7,8 +7,210 @@
   <title>Document</title>
 </head>
 <body>
-  <script>
-// === class 3
+<script>
+
+
+
+// === 1 ===
+function greet(user, callback) {
+  return console.log(callback(user));
+}
+
+greet('Sergio', name => `Hello, ${name}!`);
+
+// === 2 ===
+function log(arg, callback) {
+  return console.log(callback(arg));
+}
+log('Stepanenco', n => n)
+
+// === 3 ===
+
+function calc(a,b,callback) {
+  return console.log(callback(a,b));
+}
+calc(15, 10, (x,y) => x+y)
+
+// === 3 advanced ===
+
+function calc(a,b,callback) {
+  return console.log(callback(a,b));
+}
+calc(15, 10, (x,y) => {
+  return {
+    sum: x+y,
+    dis: x-y,
+    mult: x*y,
+    div: x/y
+  }
+})
+
+// === 4 ===
+
+function out(array, callback) {
+  return console.log(callback(array))
+}
+
+out([4,6,12,13,0,4,9], sortBack)
+
+function sort(arr) {
+  return arr.sort((a,b) => a - b)
+}
+
+function sortBack(arr) {
+  return arr.sort((a,b) => a - b).reverse();
+}
+
+// === 5 ===
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+const arr3 = arr1.concat(arr2);
+const arrSpread = ['new array',...arr1, 'middle',...arr2,'end'];
+console.log(arr3);
+console.log(arrSpread);
+
+// === 6 ===
+const arr4 = [1,2,3,4,5];
+arr4.splice(1,1,'a','b');
+arr4.splice(-2,1,'c');
+arr4.splice(arr4.length,0,'e');
+console.log(arr4);
+
+// ========== class 1 ===
+// ====== WORKING ARRAYS:
+const a = [-5,1,10,2,8,6,-5];
+const b = [1,-5,-5,5,7,10,7];
+
+function arrMachine(arr1, arr2, callback) {
+  return callback(arr1, arr2);
+}
+
+// === CALLING MAIN FUNCTION:
+console.log(arrMachine(a, b, findSim));
+
+// === Sum of Arrays
+function arrSum(array1, array2) {
+  let sum = 0;
+  for (let elem of array1) {
+    sum = sum + elem;
+  }
+  for (let elem of array2) {
+    sum = sum + elem;
+  }
+  return sum;
+}
+
+// === Sum of Arrays Indexes
+function arrIndexSum(array1, array2) {
+  const c = [];
+  for (let i = 0; i < array1.length; i++) {
+    c.push(array1[i] + array2[i]);
+  }
+  return c;
+}
+
+// === Combine and Sort Arrays:
+function arrSort(array1, array2) {
+  const d = [...array1, ...array2];
+  d.sort((a,b) => a-b);
+  return d;
+}
+
+// Combine and log unique elements of new array ===
+function arrUniq(array1, array2) {
+  const e = [...array1, ...array2];
+  console.log('Combined original array: ',e);
+  e.sort((a,b) => a-b);
+  for (let i = 0; i < e.length; i++) {
+    if (e[i] === e[i+1]) {
+      e.splice(i,1)
+    }
+  }
+  console.log('New array with unique and sorted elements: ');
+  return e;
+}
+
+// === Version 2 with indexOf (shorter and without .sort())
+function arrUniq2(array1, array2) {
+  const comb = [...array1,...array2];
+  const uniq = [];
+  for (let i = 0; i <comb.length; i++) {
+    if (uniq.indexOf(comb[i]) === -1) {
+      uniq.push(comb[i]);
+    }
+  }
+  console.log('Original array is: ', comb);
+  console.log('Uniq values are: ');
+  return uniq;
+}
+// === class 2 ===
+function findSim(array1, array2) {
+  const len = array1.length;
+  let result1;
+  let result2;
+  // loop for array1:
+  for (let i = 0; i < len; i++) {
+    if (array1[i] === array1[i+1]) {
+      result1 = "YES!";
+      break;
+    } else result1 = 'NO!';
+  }
+  // loop for array2:
+  for (let i = 0; i < len; i++) {
+    if (array2[i] === array2[i+1]) {
+      result2 = "YES!"
+      break;
+    } else result2 = 'NO!';
+  }
+  console.log(result1);
+  return result2;
+}
+
+// === class 3 ===
+// MAIN FUNCTION
+function mainFn(array, position) {
+
+}
+
+// last task ...
+// CALLING MAIN FUNCTION:
+lastFn(a, b, multArr);
+// MAIN FUNCTION:
+function lastFn(a1,a2,callback) {
+  const len = a1.length;
+  let outArr = [];
+  return callback(a1,a2,len,outArr);
+}
+// CALLBACKS Description:
+function divArr(array1, array2, len, out) {
+  for (let i = 0; i < len; i++) {
+    out[i] = array1[i] / array2[i];
+  }
+  return console.log(out);
+}
+
+function multArr(array1, array2, len, out) {
+  for (let i = 0; i < len; i++) {
+    out[i] = array1[i] * array2[i];
+  }
+  return console.log('Mult Arr: ',out);
+}
+
+function subArr(array1, array2, len, out) {
+  for (let i = 0; i < len; i++) {
+    out[i] = array1[i] - array2[i];
+  }
+  return console.log(out);
+}
+
+function modArr(array1, array2, len, out) {
+  for (let i = 0; i < len; i++) {
+    out[i] = array1[i] % array2[i];
+  }
+  return console.log(out);
+}
+
+// === class 3 ===
 const myArr = [4,2,6,8,8,-3,6,11,9];
 const myArr2 = [-2,20,13,7,-1];
 
@@ -16,7 +218,7 @@ function findIndex(array, value) {
   let index = array.indexOf(value);
   return index;
 }
-console.log(findIndex(myArr, -3));
+console.log('Index found: ', findIndex(myArr, -3));
   
 // === class 3, task 2:
 function sumIndex(array1, array2) {
@@ -46,7 +248,7 @@ function sumIndex(array1, array2) {
     return arraySum;
   }
 }
-console.log(sumIndex(myArr, myArr2));
+console.log('Added: ', sumIndex(myArr, myArr2));
 
 // === class 3 task 3 ===
 
@@ -83,19 +285,16 @@ function addArrs(array1, array2) {
   }
 }
 
-// Dividing callback:
-
-function divArrs(array1, array2) {
-  
-}
+console.log('Added arrays: ', mainFunc(myArr, myArr2, addArrs));
 
 
+// === Sum of array elements with reduce() ==
+arrayTest = [2,4,3,5,8,2];
+let red = (total, el) => total + el;
+let art = arrayTest.reduce(red);
+//console.log('Reduced: ', art);
 
 
-console.log(mainFunc(myArr, myArr2, addArrs));
-
-
-
-  </script>
+</script>
 </body>
 </html>

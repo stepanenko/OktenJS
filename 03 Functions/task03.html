@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+// === Output Array Function ===
+
+
+// someArray = [1,4,2,5,0];
+// function outArray(array, callback) {
+//   callback(array);
+// }
+// outArray(someArray, arr => {
+//   arr.forEach(x => console.log(x))
+// })
+
+// === Create Random Array and output it ===
+
+function genArr(len, range, action){
+  const randomArray = [];
+  for (let i = 0; i < len; i++){
+    let random = Math.floor(Math.random() * range)
+    randomArray.push(random);
+  }
+  if (arguments[2] != undefined) {
+    action(randomArray);
+  }
+  return console.log(randomArray);
+}
+// Calling main function:
+
+genArr(10, 1000);
+
+// === Find Max Value of Array ===
+
+function findMax(array) {
+  const max = Math.max(...array);
+  return console.log('Max value is: ', max)
+}
+
+// === Find Sum of Array Items ===
+function addItems(array) {
+  let total = 0;
+  for (let el of array) {
+    total = total + el;
+  }
+  return console.log('Sum of array items is: ', total);
+}
+
+
+
+
+// === REVERSE NUMBER ===
+    // const number = 258;
+    // n = number + '';
+    // s = n.split('');
+    // r = s.reverse();
+    // j = r.join('');
+    // console.log(j);
+
+// CLEANER WAY:
+  // let number = 714;
+  // number = number + '';
+  // reverse = number.split('').reverse().join('');
+  // console.log(reverse);
+
+    </script>
+  
+</body>
+</html>
