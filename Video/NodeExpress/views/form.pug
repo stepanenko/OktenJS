@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title FORM
+  body
+    h2 Form with GET:
+    form(action="/reg")
+      input(type="text" name="name")
+      input(type="number" name="age")
+      input(type="submit")
+
+    h2 Form with POST:
+    form(action="/reg" method="post")
+      input(type="text" name="name")
+      input(type="number" name="age")
+      input(type="submit")
