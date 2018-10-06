@@ -1,0 +1,15 @@
+{
+  "name": "nodeexpress",
+  "version": "1.0.0",
+  "description": "code from video lesson on Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3"
+  }
+}
