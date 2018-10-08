@@ -2,13 +2,15 @@ doctype html
 html
   head  
     title Animals
+    link(rel='stylesheet' href='/css/main.css')
   body
-    h1 ZOO
-    h2 Add new animal:
-    form(action='/create-animal' method='post')
-      label(for='name') Name:
-      input(type='text' name='name')
-      input(type='submit')
-    ul
-      each animal in animals
-        li= 'id: ' + animal.id + ' name: ' + animal.name
+    div(class='container')
+      h1 ZOO
+      h2 Add new animal:
+      form(action='/create-animal' method='post')
+        label(for='name') Name:
+        input(type='text' name='name')
+        input(type='submit')
+      ul
+        each animal in animals
+          li= 'id: ' + animal.id + ' name: ' + animal.name
