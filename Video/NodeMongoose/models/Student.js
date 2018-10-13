@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 const StudentSchema = new Schema(
   {
     name: String,
-    surname: String
+    surname: String,
+    school: {
+      type: Schema.ObjectId,
+      ref: 'school'
+    }
   }
 );
 // === VIRTUAL ===

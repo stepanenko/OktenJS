@@ -72,13 +72,33 @@ async function init() {
   //   surname: 'Daniels'
   // });
 
-  let student = await Student.findById('5bc1b3cea423401958883390');
-  // Using GETTER:
-  console.log(student.fullname);
-  // Using SETTER:
-  student.fullname = 'Jackie Chan';
-  console.log(student.name);
-  console.log(student.surname);
+  // === GETTER / SETTER  ===
+  // let student = await Student.findById('5bc1b3cea423401958883390');
+  // // Using GETTER:
+  // console.log(student.fullname);
+  // // Using SETTER:
+  // student.fullname = 'Jackie Chan';
+  // console.log(student.name);
+  // console.log(student.surname);
+
+  // === REFERENCEs between two collections ===
+  // const school = await School.findById('5bc19438345ab02a800c8403');
+  // const a = await Student.findById('5bc1b4f0961d132180b62abd');
+  // const b = await Student.findById('5bc1b3cca42340195888338f');
+  
+  // school.students = [a, b];
+  // a.school = school;
+  // b.school = school;
+  
+  // await school.save();
+  // await a.save();
+  // await b.save();
+  
+  // === Logging RESULTs via POPULATE: ===
+  const school = await School
+    .findById('5bc19438345ab02a800c8403')
+    .populate('students');
+  console.log(school);
 }
 
 init();
