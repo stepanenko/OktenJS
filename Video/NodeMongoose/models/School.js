@@ -19,7 +19,7 @@ const SchoolSchema = new Schema(
     students: [
       {
         type: Schema.ObjectId,
-        ref: 'student'
+        ref: 'student'        // referencing to another collection 'Students'
       }
     ]
   }

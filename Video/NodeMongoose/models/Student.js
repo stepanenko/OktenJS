@@ -7,7 +7,7 @@ const StudentSchema = new Schema(
     surname: String,
     school: {
       type: Schema.ObjectId,
-      ref: 'school'
+      ref: 'school'         // referencing to another collection 'School'
     }
   }
 );
