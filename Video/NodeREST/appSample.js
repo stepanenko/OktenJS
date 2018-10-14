@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const Client = require('./models/Client');
-const ControllerError = require('./errors/ControllerError');
 
 mongoose.connect('mongodb://localhost/restvideo', { useNewUrlParser: true });
 
@@ -17,7 +16,7 @@ app.get('/api/clients/:id', async (req, res, next) => {
     res.status(200).json(client);
   } 
   catch (e) {
-    next(new ControllerError(e.message, 400));
+    next(e);
   }
 });
 
@@ -27,7 +26,7 @@ app.get('/api/clients', async (req, res, next) => {
     res.status(200).json(clients);
   }
   catch (e) {
-    next(new ControllerError(e.message, 400));
+    next(e);
   }
 });
 
@@ -37,7 +36,7 @@ app.post('/api/clients', async (req, res, next) => {
     res.status(201).json(client);
   }
   catch (e) {
-    next(new ControllerError(e.message, 400));
+    next(e);
   }
 });
 
@@ -47,7 +46,7 @@ app.put('/api/clients/:id', async (req, res, next) => {
     res.status(201).json(client);
   }
   catch (e) {
-    next(new ControllerError(e.message, 400));
+    next(e);
   }
 });
 
@@ -57,20 +56,12 @@ app.delete('/api/clients/:id', async (req, res, next) => {
     res.status(203).json(client);
   }
   catch (e) {
-    next(new ControllerError(e.message, 400));
+    next(e);
   }
 });
 
-app.use((req, res, next) => {
-  next(new ControllerError('Not Found', 404));
-});
-
-// All errors from controllers 'next()' come here:
 app.use((err, req, res, next) => {
-  res.status(500).json({
-    message: err.msg,
-    status: err.status
-  });
+  console.log(err.message)
 }); 
 
 app.listen(3000, () => console.log('Listening...'));
