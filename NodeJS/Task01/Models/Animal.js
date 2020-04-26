@@ -1,3 +1,4 @@
+
 module.exports = class Animal {
 
   constructor(id, name) {

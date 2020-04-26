@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const Animal = require('./Models/Animal')
@@ -16,7 +17,7 @@ app.set('view engine', 'pug');
 app.get('/', (req, res) => {
   res.render('index', {
     animals
-  })
+  });
 });
 
 app.post('/create-animal', (req, res) => {

@@ -1,95 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
 
   <script>
-  // === Task 1 ===
+    // === Task 1 ===
 
     function arrGen() {
       let arr = [];
       let n = 0;
-        for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 10; i++) {
         n = n + 2;
-        arr.push(n)
-        }
-      
-    return arr;
-}
-  //console.log(arrGen());
+        arr.push(n);
+      }
 
-
-// === Task 2 ===
-function random() {
-  const ranArr = [];
-  for (let i = 0; i < 10; i++) {
-    let random = Math.floor(Math.random() * 100);
-    ranArr.push(random)
-  }
-  return ranArr;
-}
-//console.log(random());
-
-
-// === Task 3 ===
-function mult5(array) {
-  let modArray = array.map(function(el) {
-    return el * 5;
-  })
-  return {
-    '1.original array': array,
-    '2.multiplied array': modArray
-  };
-}
-//console.table(mult5(random()));
-
-// === Task 4 ===
-const ex = [2,'work flow',true, 13, 'field', undefined,-6];
-
-function isNumber(array) {
-  const numbers = [];
-  for (let el of ex) {
-    if (typeof el === 'number') {
-      numbers.push(el)
+      return arr;
     }
-  }
-  return numbers;
-}
-//console.log(isNumber(ex));
+    // console.log(arrGen());
 
 
-// === Task 5 ===
-const prices = [100,250,50,168,120,345,188];
+    // === Task 2 ===
+    function random() {
+      const ranArr = [];
+      for (let i = 0; i < 10; i++) {
+        let random = Math.floor(Math.random() * 100);
+        ranArr.push(random);
+      }
+      return ranArr;
+    }
+    // console.log(random());
 
-function calcAvg(array) {
-  let avg = 0;
-  const sum = array.reduce(function(a,b) {
-    return a + b;
-  },0)
-  if (sum !== 0) {
-    avg = sum / array.length;
-  }
-  
-  console.log('Average price is: ');
-  return avg;
-}
-console.log(calcAvg(prices))
 
-// === Task 5 (shorter solution) ===
+    // === Task 3 ===
+    function mult5(array) {
+      let modArray = array.map(function (el) {
+        return el * 5;
+      });
+      return {
+        '1.original array': array,
+        '2.multiplied array': modArray
+      };
+    }
+    //console.table(mult5(random()));
 
-function avg(array) {
-  let avg = array.reduce((a,b) => a + b, 0) / array.length;
-  console.log('Average is: ');
-  return avg
-}
-console.log(avg(prices))
+    // === Task 4 ===
+    const ex = [2, 'work flow', true, 13, 'field', undefined, -6];
+
+    function isNumber(array) {
+      const numbers = [];
+      for (let el of ex) {
+        if (typeof el === 'number') {
+          numbers.push(el);
+        }
+      }
+      return numbers;
+    }
+    // console.log(isNumber(ex));
+
+
+    // === Task 5 ===
+    const prices = [100, 250, 50, 168, 120, 345, 188];
+
+    function calcAvg(array) {
+      let avg = 0;
+      const sum = array.reduce(function (a, b) {
+        return a + b;
+      }, 0);
+      if (sum !== 0) {
+        avg = sum / array.length;
+      }
+
+      console.log('Average price is: ');
+      return avg;
+    }
+    console.log(calcAvg(prices))
+
+    // === Task 5 (shorter solution) ===
+
+    function avg(array) {
+      let avg = array.reduce((a, b) => a + b, 0) / array.length;
+      console.log('Average is: ');
+      return avg;
+    }
+    console.log(avg(prices));
 
 
   </script>
 </body>
+
 </html>

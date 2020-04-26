@@ -1,155 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
 </head>
+
 <body>
 
-<script>
-  // ==== creating array manually 
-const tags = 
-[
-  { 
-    title: 'a',
-    action: 'creates a link',
-    attr: [
-      { name: 'href', desc: 'creates a specific address link' },
-      { name: 'target', desc: 'changes how a link is opened'}
+  <script>
+    // ==== creating array manually 
+    const tags =
+      [
+        {
+          title: 'a',
+          action: 'creates a link',
+          attr: [
+            { name: 'href', desc: 'creates a specific address link' },
+            { name: 'target', desc: 'changes how a link is opened' }
           ]
-  }
-];
+        }
+      ];
 
-// === adding objects to array manually
-tags[1] = { 
-  title: 'div', 
-  action: 'creates a block for any content', 
-  attr: [
-    { name: 'id', desc: 'makes an id for that div element'}, 
-    { name: 'hidden', desc: 'hides an element'}
-    ]
-};
-//console.log(tags)
+    // === adding objects to array manually
+    tags[1] = {
+      title: 'div',
+      action: 'creates a block for any content',
+      attr: [
+        { name: 'id', desc: 'makes an id for that div element' },
+        { name: 'hidden', desc: 'hides an element' }
+      ]
+    };
+    //console.log(tags)
 
-// === using a class to add new objects to an array
-const collection = [];
+    // === using a class to add new objects to an array
+    const collection = [];
 
-class Tag {
-  constructor (title, action) {
-    this.title = title;
-    this.action = action;
-    this.attributes = [];
-  }
-  push (array) {
-    array.push(this);
-  }
-  add (attr, desc) {
-    this.attributes.push({ attr, desc });
-  }
-  show () {
-    console.log(this)
-  }
-}
+    class Tag {
+      constructor(title, action) {
+        this.title = title;
+        this.action = action;
+        this.attributes = [];
+      }
+      push(array) {
+        array.push(this);
+      }
+      add(attr, desc) {
+        this.attributes.push({ attr, desc });
+      }
+      show() {
+        console.log(this);
+      }
+    }
 
-let h1 = new Tag('h1', 'creates a header for main title');
-h1.add('accesskey', 'Provides a hint for generating a keyboard shortcut.');
-h1.add('class', 'A space-separated list of the classes of the element.');
+    let h1 = new Tag('h1', 'creates a header for main title');
+    h1.add('accesskey', 'Provides a hint for generating a keyboard shortcut.');
+    h1.add('class', 'A space-separated list of the classes of the element.');
 
-let span = new Tag('span', 'Generic inline container for phrasing content');
-span.add('contenteditable','An enumerated attribute indicating if the element should be editable by the user.');
-span.add('contextmenu', 'The id of a <menu> to use as the contextual menu for this element.')
+    let span = new Tag('span', 'Generic inline container for phrasing content');
+    span.add('contenteditable', 'An enumerated attribute indicating if the element should be editable by the user.');
+    span.add('contextmenu', 'The id of a <menu> to use as the contextual menu for this element.');
 
-const input = new Tag('input', 'specifies an input field where the user can enter data');
-input.add('draggable','An enumerated attribute indicating whether the element can be dragged, using the Drag and Drop API.');
+    const input = new Tag('input', 'specifies an input field where the user can enter data');
+    input.add('draggable', 'An enumerated attribute indicating whether the element can be dragged, using the Drag and Drop API.');
 
-const form = new Tag('form', 'defines a form that is used to collect user input:');
-form.add('action', 'defines the action to be performed when the form is submitted');
-form.add('target','specifies if the submitted result will open in a new browser tab, a frame, or in the current window.');
+    const form = new Tag('form', 'defines a form that is used to collect user input:');
+    form.add('action', 'defines the action to be performed when the form is submitted');
+    form.add('target', 'specifies if the submitted result will open in a new browser tab, a frame, or in the current window.');
 
-//adding our tags to an array "collection"
-span.push(collection);
-input.push(collection);
-form.push(collection);
-h1.push(collection);
+    //adding our tags to an array "collection"
+    span.push(collection);
+    input.push(collection);
+    form.push(collection);
+    h1.push(collection);
 
-const col = JSON.stringify(collection, '', 2);
-// console.log(col);
+    const col = JSON.stringify(collection, '', 2);
+    // console.log(col);
 
-// ======== TASK 2 ==========
+    // ======== TASK 2 ==========
 
-class Car {
-  constructor(title, brand, year, maxSpeed) {
-    this.title = title;
-    this.brand = brand;
-    this.year = year;
-    this.maxSpeed = maxSpeed;
-  }
-  drive() {
-    console.log(`${this.title} is DRIVING!!!`)
-  }
-}
+    class Car {
+      constructor(title, brand, year, maxSpeed) {
+        this.title = title;
+        this.brand = brand;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+      }
+      drive() {
+        console.log(`${this.title} is DRIVING!!!`);
+      }
+    }
 
-function Vehicle (title, brand, year) {
-  this.title = title;
-  this.brand = brand;
-  this.year = year;
-  this.drive = function (input) {
-    console.log(`${this.title} drives! ${input}`)
-  }
-}
+    function Vehicle(title, brand, year) {
+      this.title = title;
+      this.brand = brand;
+      this.year = year;
+      this.drive = function (input) {
+        console.log(`${this.title} drives! ${input}`);
+      }
+    }
 
-const BMW = new Vehicle('x7', 'BMW', 2017);
-// console.log(BMW);
-// BMW.drive();
-const renault = new Car('Megane', 'Renault', 2011, 240);
-// renault.drive();
+    const BMW = new Vehicle('x7', 'BMW', 2017);
+    // console.log(BMW);
+    // BMW.drive();
+    const renault = new Car('Megane', 'Renault', 2011, 240);
+    // renault.drive();
 
-let car = {
-  title: '808',
-  brand: 'Peugeot',
-  year: 2016
-}
-car = JSON.stringify(car, '?', 2);
-console.log(car);
-car = JSON.parse(car);
-// console.log(car);
+    let car = {
+      title: '808',
+      brand: 'Peugeot',
+      year: 2016
+    }
+    car = JSON.stringify(car, '?', 2);
+    console.log(car);
+    car = JSON.parse(car);
+    // console.log(car);
 
-BMW.drive.call(car, 'some text');
-renault.drive.apply(car, ['some text']);
-const carDrives = BMW.drive.bind(car, 'some text');
-const carDr = renault.drive.bind(car);
+    BMW.drive.call(car, 'some text');
+    renault.drive.apply(car, ['some text']);
+    const carDrives = BMW.drive.bind(car, 'some text');
+    const carDr = renault.drive.bind(car);
 
-carDrives();
-carDr();
+    carDrives();
+    carDr();
 
 
-// ============== TASK 3 ================
-function Pop(name, age, size) {
-  this.name = name;
-  this.age = age;
-  this.size = size;
-}
+    // ============== TASK 3 ================
+    function Pop(name, age, size) {
+      this.name = name;
+      this.age = age;
+      this.size = size;
+    }
 
-const mary = new Pop('Mary', 26, 36);
-const tammy = new Pop('Tammy', 30, 37);
-const olivia = new Pop('Olivia', 24, 35);
-const caren = new Pop('caren', 22, 34);
+    const mary = new Pop('Mary', 26, 36);
+    const tammy = new Pop('Tammy', 30, 37);
+    const olivia = new Pop('Olivia', 24, 35);
+    const caren = new Pop('caren', 22, 34);
 
-const prince = {
-  name: 'Prince',
-  age: 31,
-  shoeSize: 36,
-  lookUp(...pop) {
-    let result = 'She is not here';
-    pop.forEach(p => {
-      if (p.size === 36) result = `Your princess is ${p.name}!`;
-    })
-    return console.log(result);
-  }
-}
+    const prince = {
+      name: 'Prince',
+      age: 31,
+      shoeSize: 36,
+      lookUp(...pop) {
+        let result = 'She is not here';
+        pop.forEach(p => {
+          if (p.size === 36) result = `Your princess is ${p.name}!`;
+        });
+        return console.log(result);
+      }
+    }
 
-prince.lookUp(tammy, olivia, mary, caren)
+    prince.lookUp(tammy, olivia, mary, caren);
 
-</script>
+  </script>
 </body>
+
 </html>

@@ -1,64 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Objects</title>
 </head>
+
 <body>
-<script>
+  <script>
 
-class Car {
-  constructor (maxSpeed, model, vendor) {
-    this.maxSpeed = maxSpeed;
-    this.model = model;
-    this.vendor = vendor;
-  }
+    class Car {
+      constructor(maxSpeed, model, vendor) {
+        this.maxSpeed = maxSpeed;
+        this.model = model;
+        this.vendor = vendor;
+      }
 
-  carInfo () {
-    let info = `Max speed: ${this.maxSpeed}. Model: ${this.model}. Vendor: ${this.vendor}.`
-    console.log(info);
-  }
-}
+      carInfo() {
+        let info = `Max speed: ${this.maxSpeed}. Model: ${this.model}. Vendor: ${this.vendor}.`
+        console.log(info);
+      }
+    }
 
-class Sport extends Car {
-  constructor(maxSpeed, accel, model, vendor) {
-    super(maxSpeed, model, vendor);
-    this.accel = accel;
-  }
-  carInfo () {
-    let info = `${super.carInfo()} Accelr: ${this.accel}`;
-    console.log(info)
-    // let info = `Acceleration: ${this.accel}`
-    // console.log(info);
-  }
-}
-class Crossover extends Car {
-  constructor(maxSpeed, model, vendor) {
-    super(maxSpeed, model, vendor);
-  }
-}
+    class Sport extends Car {
+      constructor(maxSpeed, accel, model, vendor) {
+        super(maxSpeed, model, vendor);
+        this.accel = accel;
+      }
+      carInfo() {
+        let info = `${super.carInfo()} Accelr: ${this.accel}`;
+        console.log(info);
+        // let info = `Acceleration: ${this.accel}`
+        // console.log(info);
+      }
+    }
+    class Crossover extends Car {
+      constructor(maxSpeed, model, vendor) {
+        super(maxSpeed, model, vendor);
+      }
+    }
 
-const bmw = new Sport(300, 180, 'x7', 'BMW');
-// console.log(bmw);
-// bmw.carInfo();
-const lexus = new Sport(310, 190, 'Prima', 'Lexus');
-// console.log(lexus);
-// lexus.carInfo();                        // Why there is undefined ???
-const rover = new Crossover(270, 'Ranger', 'Range Rover');
-const quash = new Crossover(240, 'qashqai', 'Nissan');
+    const bmw = new Sport(300, 180, 'x7', 'BMW');
+    // console.log(bmw);
+    // bmw.carInfo();
+    const lexus = new Sport(310, 190, 'Prima', 'Lexus');
+    // console.log(lexus);
+    // lexus.carInfo();                        // Why there is undefined ???
+    const rover = new Crossover(270, 'Ranger', 'Range Rover');
+    const quash = new Crossover(240, 'qashqai', 'Nissan');
 
-const cars = [rover, quash, lexus, bmw];
-let auto = JSON.stringify(cars, "", 4);
-console.log(auto);
-let vendors = JSON.stringify(cars, ["vendor", "model"])
-console.log(vendors);
-
-
-//new Sport(55, 55,'Prima', 'Lexus').carInfo();  // it works
+    const cars = [rover, quash, lexus, bmw];
+    let auto = JSON.stringify(cars, "", 4);
+    console.log(auto);
+    let vendors = JSON.stringify(cars, ["vendor", "model"])
+    console.log(vendors);
 
 
+    // new Sport(55, 55,'Prima', 'Lexus').carInfo();   // it works
 
-
-</script>
+  </script>
 </body>
+
 </html>

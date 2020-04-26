@@ -1,152 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Arr Obj Class</title>
 </head>
+
 <body>
 
+  <script>
+
+    class Car {
+      constructor(make, model, year, color, type, engine, volume, power) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.type = type;
+        this.engine = engine;
+        this.volume = volume;
+        this.power = power;
+      }
+      so(arg) {
+
+        console.log('OK')
+      }
+    }
+
+    let cars = [
+      new Car("subaru", "wrx", 2010, "blue", "sedan", "ej204x", 2, 400),
+      new Car("subaru", "legacy", 2007, "silver", "sedan", "ez30", 3, 250),
+      new Car("subaru", "tribeca", 2011, "white", "jeep", "ej20", 2, 300),
+      new Car("subaru", "leone", 1998, "yellow", "sedan", "ez20x", 2, 140),
+      new Car("subaru", "impreza", 2014, "red", "sedan", "ej204x", 2, 200),
+      new Car("subaru", "outback", 2014, "red", "hachback", "ej204", 2, 165),
+      new Car("bmw", "115", 2013, "red", "hachback", "f15", 1.5, 120),
+      new Car("bmw", "315", 2010, "white", "sedan", "f15", 1.5, 120),
+      new Car("bmw", "650", 2009, "black", "coupe", "f60", 6, 350),
+      new Car("bmw", "320", 2012, "red", "sedan", "f20", 2, 180),
+      new Car("mercedes", "e200", 1990, "silver", "sedan", "eng200", 2, 180),
+      new Car("mercedes", "e6.3", 2017, "yellow", "sedan", "amg6.3", 6, 400),
+      new Car("mercedes", "c250", 2017, "red", "sedan", "eng25", 2.5, 230)
+    ];
+
+    // ====== Using FILTER to find and log spesific cars ======
+
+    const sub = cars.find(c => c.make == 'subaru');   // finds only the first matched item
+    // console.log(sub)
+
+    const volumeMore3 = cars.filter(c => c.volume >= 3);
+    // console.log(volumeMore3)
+
+    const volume2 = cars.filter(c => c.volume == 2);
+    // console.log(volume2)
+
+    const merc = cars.filter(c => c.make == 'mercedes');
+    // console.log(merc);
+
+    const vol3merc = merc.filter(m => m.volume >= 3);
+    // console.log(vol3merc);
+
+    const vol3sub = volumeMore3.filter(c => c.make == 'subaru');
+    // console.log(vol3sub);
+
+    const pow300 = cars.filter(c => c.power >= 300);
+    // console.log(pow300);
+
+    const pow300sub = pow300.filter(c => c.make == 'subaru');
+    // console.log(pow300sub);
+
+    const engineEJ = cars.filter(c => {
+      return c.engine.match("ej")
+    });
+    // console.log(engineEJ);
+
+    const pow300subEJ = pow300sub.filter(c => {
+      return c.engine.match("ej")
+    });
+    // console.log(pow300subEJ);
+
+    const voma = cars
+      .filter(c => c.volume < 3)
+      .filter(c => c.make == 'mercedes');
+    // console.log(voma);
+
+    const vopo = cars
+      .filter(c => c.volume >= 2)
+      .filter(c => c.power > 250);
+    // console.log(vopo);
+
+    const poma = cars
+      .filter(c => c.power > 250)
+      .filter(c => c.make == 'bmw');
+    // console.log(poma);
 
 
-<script>
+    // ===== SORTING =====
 
-class Car {
-  constructor(make, model, year, color, type, engine, volume, power) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.color = color;
-    this.type = type;
-    this.engine = engine;
-    this.volume = volume;
-    this.power = power;
-  }
-  so(arg) {
+    const sortMake = cars.sort((a, b) => {
+      if (a.make > b.make) return 1;
+      if (a.make < b.make) return -1;
+      return 0;
+    });
+    console.log(sortMake)
 
-    console.log('OK')
-  }
-}
-
-let cars = [
-  new Car("subaru", "wrx", 2010, "blue", "sedan", "ej204x", 2, 400),
-  new Car("subaru", "legacy", 2007, "silver", "sedan", "ez30", 3, 250),
-  new Car("subaru", "tribeca", 2011, "white", "jeep", "ej20", 2, 300),
-  new Car("subaru", "leone", 1998, "yellow", "sedan", "ez20x", 2, 140),
-  new Car("subaru", "impreza", 2014, "red", "sedan", "ej204x", 2, 200),
-  new Car("subaru", "outback", 2014, "red", "hachback", "ej204", 2, 165),
-  new Car("bmw", "115", 2013, "red", "hachback", "f15", 1.5, 120),
-  new Car("bmw", "315", 2010, "white", "sedan", "f15", 1.5, 120),
-  new Car("bmw", "650", 2009, "black", "coupe", "f60", 6, 350),
-  new Car("bmw", "320", 2012, "red", "sedan", "f20", 2, 180),
-  new Car("mercedes", "e200", 1990, "silver", "sedan", "eng200", 2, 180),
-  new Car("mercedes", "e6.3", 2017, "yellow", "sedan", "amg6.3", 6, 400),
-  new Car("mercedes", "c250", 2017, "red", "sedan", "eng25", 2.5, 230)
-];
-
-// ====== Using FILTER to find and log spesific cars ======
+    // const sortColor = cars.sort((a, b) => {
+    //   if (a.color > b.color) return 1;
+    //   if (a.color < b.color) return -1;
+    //   return 0;
+    // });
+    // console.log(sortColor)
 
 
-const sub = cars.find(c => c.make == 'subaru'); // finds only the first matched item
-//console.log(sub)
+    // const sortYear = cars.sort((a, b) => {
+    //   return a.year - b.year
+    // });
 
-const volumeMore3 = cars.filter(c => c.volume >= 3);
-//console.log(volumeMore3)
-
-const volume2 = cars.filter(c => c.volume == 2);
-//console.log(volume2)
-
-const merc = cars.filter(c => c.make == 'mercedes');
-//console.log(merc);
-
-const vol3merc = merc.filter(m => m.volume >= 3);
-//console.log(vol3merc);
-
-const vol3sub = volumeMore3.filter(c => c.make == 'subaru');
-//console.log(vol3sub);
-
-const pow300 = cars.filter(c => c.power >= 300);
-//console.log(pow300);
-
-const pow300sub = pow300.filter(c => c.make == 'subaru');
-//console.log(pow300sub);
-
-const engineEJ = cars.filter(c => {
-  return c.engine.match("ej")
-});
-//console.log(engineEJ);
-
-const pow300subEJ = pow300sub.filter(c => {
-  return c.engine.match("ej")
-});
-//console.log(pow300subEJ);
-
-const voma = cars
-  .filter(c => c.volume < 3)
-  .filter(c => c.make == 'mercedes');
-//console.log(voma);
-
-const vopo = cars
-  .filter(c => c.volume >= 2)
-  .filter(c => c.power > 250);
-//console.log(vopo);
-
-const poma = cars
-  .filter(c => c.power > 250)
-  .filter(c => c.make == 'bmw');
-//console.log(poma);
-
-// ===== SORTING =====
-
-const sortMake = cars.sort((a, b) => {
-  if (a.make > b.make) return 1;
-  if (a.make < b.make) return -1;
-  return 0;
-});
-console.log(sortMake)
-
-// const sortColor = cars.sort((a, b) => {
-//   if (a.color > b.color) return 1;
-//   if (a.color < b.color) return -1;
-//   return 0;
-// });
-// console.log(sortColor)
+    //console.log(sortYear)
 
 
-// const sortYear = cars.sort((a, b) => {
-//   return a.year - b.year
-// });
+    // ======== Interesting sort() EXAMPLE from: =======
+    // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
-//console.log(sortYear)
+    // массив для сортировки
+    var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
 
+    // временный массив содержит объекты с позицией и значением сортировки
+    var mapped = list.map(function (el, i) {
+      return { index: i, value: el.toLowerCase() };
+    });
 
-// ======== Interesting sort() EXAMPLE from: =======
-// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+    // сортируем массив, содержащий уменьшенные значения
+    mapped.sort(function (a, b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      return 0;
+    });
 
-// массив для сортировки
-var list = ['Дельта', 'альфа', 'ЧАРЛИ', 'браво'];
+    // контейнер для результа
+    var result = mapped.map(function (el) {
+      return list[el.index];
+    });
+// console.log(result)
 
-// временный массив содержит объекты с позицией и значением сортировки
-var mapped = list.map(function(el, i) { 
-return { index: i, value: el.toLowerCase() }; 
-});
-
-// сортируем массив, содержащий уменьшенные значения
-mapped.sort(function(a, b) { 
-  if (a.value > b.value) { 
-    return 1; } 
-  if (a.value < b.value) { 
-    return -1; } 
-  return 0; 
-});
-
-// контейнер для результа
-var result = mapped.map(function(el) {
-  return list[el.index];
-});
-//console.log(result)
-
-
-
-</script>
+  </script>
 </body>
+
 </html>

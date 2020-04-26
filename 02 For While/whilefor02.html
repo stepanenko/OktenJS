@@ -1,157 +1,154 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <title>While For</title>
-    <link rel="stylesheet" href="whilefor02.css">
+  <meta charset="utf-8" />
+  <title>While For</title>
+  <link rel="stylesheet" href="whilefor02.css">
 </head>
+
 <body>
-    <div class="first">
-        <button onclick="task1()">Task 1</button>
-        <button onclick="task2()">Task 2</button>
-        <button onclick="task3()">Task 3</button>
-        <button onclick="task4()">Task 4</button>
-        <button onclick="task5()">Task 5</button>
-        <button onclick="task6()">Task 6</button>
-        <button onclick="task7()">Task 7</button>
-        <button onclick="task8()">Task 8</button>
-        <button onclick="task8a()">Task 8a</button>
+  <div class="first">
+    <button onclick="task1()">Task 1</button>
+    <button onclick="task2()">Task 2</button>
+    <button onclick="task3()">Task 3</button>
+    <button onclick="task4()">Task 4</button>
+    <button onclick="task5()">Task 5</button>
+    <button onclick="task6()">Task 6</button>
+    <button onclick="task7()">Task 7</button>
+    <button onclick="task8()">Task 8</button>
+    <button onclick="task8a()">Task 8a</button>
 
-    </div>
-    <div class="first second">
-        <button onclick="task9()">Task 9</button>
-        <button onclick="task9a()">Task 9a</button>
-        <button onclick="task9b()">Task 9b</button>
-        <button onclick="task9c()">Task 9c</button>
-        <button onclick="task10()">Task 10</button>
-        <button onclick="task11()">Task 11</button>
-        <button onclick="task12()">Task 12</button>
-        <button onclick="task13()">Task 13</button>
-        <button onclick="console.clear()">Clear Console</button>
-    </div>
-    
+  </div>
+  <div class="first second">
+    <button onclick="task9()">Task 9</button>
+    <button onclick="task9a()">Task 9a</button>
+    <button onclick="task9b()">Task 9b</button>
+    <button onclick="task9c()">Task 9c</button>
+    <button onclick="task10()">Task 10</button>
+    <button onclick="task11()">Task 11</button>
+    <button onclick="task12()">Task 12</button>
+    <button onclick="task13()">Task 13</button>
+    <button onclick="console.clear()">Clear Console</button>
+  </div>
 
+  <script>
 
-    
-
-
-    <script>
-
-    let arr = [2,17,13,6,22,31,45,66,100,-18];
-    function task1(){
-        console.log("Show Array via While:")
-        let i = 0;
-        while (i<arr.length){
-            console.log(arr[i]);
-            i++;
-        }
-    }
-    function task2(){
-        console.log("Show Array via For:")
-        for(let i = 0; i<arr.length; i++){
-            console.log(arr[i])
-        }
-    }
-    function task3(){
-        console.log("Show Array with even index via While:");
-        let i = 1;
-        while (i<arr.length){
-            console.log('arr['+i+']: '+arr[i]);
-            i = i + 2;
-        }
-        console.log('\nArray length is: '+arr.length);
-    }
-    function task4(){
-        console.log("Show Array with even index via For:");
-        for(let i = 1; i<arr.length; i = i + 2){
-            console.log('arr['+i+']: '+arr[i]);
-        }
-    }
-    function task5(){
-        let i = 0;
-        console.log('Even values of Array via While:')
-        while (i<arr.length){
-            if (arr[i] % 2 == 0) console.log(arr[i]);
-            i++;
-        }
-    }
-    function task6(){
-        console.log('Even values of Array via For:')
-        for (let i = 0; i<arr.length; i++){
-            if (arr[i] % 2 == 0) console.log(arr[i]);
-        }
-    }
-    function task7(){
-        let i = 0;
-        console.log('Numbers were changed to Okten:')
-        while (i<arr.length){
-            if (arr[i] % 3 == 0){
-                arr[i] = "okten";
-            }
-            i++;
-        }
-        console.log('New Array:');
-        i = 0;
-        while (i<arr.length){
-            console.log(arr[i]);
-            i++;
-            }
-        }
-    function task8(){
-        console.log('Reversed Array via arr.reverse():')
-        arr.reverse();
-        i = 0;
-        while (i<arr.length){
+    let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+    function task1() {
+      console.log("Show Array via While:")
+      let i = 0;
+      while (i < arr.length) {
         console.log(arr[i]);
         i++;
-        }
+      }
     }
-    function task8a(){
-        console.log('Reversed Array via decrement:')
-        i = arr.length - 1;
-        while (i>=0){
+    function task2() {
+      console.log("Show Array via For:");
+      for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+      }
+    }
+    function task3() {
+      console.log("Show Array with even index via While:");
+      let i = 1;
+      while (i < arr.length) {
+        console.log('arr[' + i + ']: ' + arr[i]);
+        i = i + 2;
+      }
+      console.log('\nArray length is: ' + arr.length);
+    }
+    function task4() {
+      console.log("Show Array with even index via For:");
+      for (let i = 1; i < arr.length; i = i + 2) {
+        console.log('arr[' + i + ']: ' + arr[i]);
+      }
+    }
+    function task5() {
+      let i = 0;
+      console.log('Even values of Array via While:')
+      while (i < arr.length) {
+        if (arr[i] % 2 == 0) console.log(arr[i]);
+        i++;
+      }
+    }
+    function task6() {
+      console.log('Even values of Array via For:')
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) console.log(arr[i]);
+      }
+    }
+    function task7() {
+      let i = 0;
+      console.log('Numbers were changed to Okten:')
+      while (i < arr.length) {
+        if (arr[i] % 3 == 0) {
+          arr[i] = "okten";
+        }
+        i++;
+      }
+      console.log('New Array:');
+      i = 0;
+      while (i < arr.length) {
+        console.log(arr[i]);
+        i++;
+      }
+    }
+    function task8() {
+      console.log('Reversed Array via arr.reverse():')
+      arr.reverse();
+      i = 0;
+      while (i < arr.length) {
+        console.log(arr[i]);
+        i++;
+      }
+    }
+    function task8a() {
+      console.log('Reversed Array via decrement:')
+      i = arr.length - 1;
+      while (i >= 0) {
         console.log(arr[i]);
         i--;
-        }
+      }
     }
-    function task9(){
-        console.log('Created Array with 50th EVEN values:');
-        let arreven = [];
-        let n = 0;
-        for(let i = 0; i<25; i++){
-            arreven[i] = 2 + n;
-            n = n + 2;
-            console.log(arreven[i]);
-        }
+    function task9() {
+      console.log('Created Array with 50th EVEN values:');
+      let arreven = [];
+      let n = 0;
+      for (let i = 0; i < 25; i++) {
+        arreven[i] = 2 + n;
+        n = n + 2;
+        console.log(arreven[i]);
+      }
 
     }
-    function task9a(){
-        console.log('Created Array with 50th EVEN values via %:');
-        arr = [];
-        for(let i = 0; i<=50; i++){
-          if (i % 2 == 0){
-            let k = 0;
-            arr[k] = i;
-            console.log(arr[k]);
-            k++;
-            }
-          }
+    function task9a() {
+      console.log('Created Array with 50th EVEN values via %:');
+      arr = [];
+      for (let i = 0; i <= 50; i++) {
+        if (i % 2 == 0) {
+          let k = 0;
+          arr[k] = i;
+          console.log(arr[k]);
+          k++;
         }
+      }
+    }
 
-    function task9b(){
+    function task9b() {
       console.log('Created Array with 50th EVEN values via .push:');
       arr = [];
-      for(let i = 0; i<=50; i++){
+      for (let i = 0; i <= 50; i++) {
         if (i % 2 == 0) {
           arr.push(i);
         }
       }
       console.log(arr);
     }
-    function task9c(){
+    function task9c() {
       console.log('Created Array with 50th ODD values via .push:');
       arr = [];
-      for(let i = 0; i<=50; i++){
+      for (let i = 0; i <= 50; i++) {
         if (i % 2 !== 0) {
           arr.push(i);
         }
@@ -159,64 +156,64 @@
       console.log(arr);
     }
 
-    function task10(){
+    function task10() {
       let len = prompt("Enter Array length:");
-      console.log("Random Array:")
+      console.log("Random Array:");
       let arr = [];
-      for(let i = 0; i<len; i++){
+      for (let i = 0; i < len; i++) {
         let ran = Math.round((Math.random() * 1000));
         arr[i] = ran;
       }
       console.log(arr);
     }
 
-    function task11(){
+    function task11() {
       let len = prompt("Enter Array length:");
       console.log("Each 3rd element of random Array:")
       let arr = [];
-      for(let i = 0; i<len; i++){
+      for (let i = 0; i < len; i++) {
         let ran = Math.round((Math.random() * 1000));
         arr[i] = ran;
       }
-      for (let x = 0; x<len; x=x+3){
-      console.log('Array['+x+']: '+arr[x]);
+      for (let x = 0; x < len; x = x + 3) {
+        console.log('Array[' + x + ']: ' + arr[x]);
       }
     }
 
-    function task12(){
+    function task12() {
       let len = prompt("Enter Array length:");
       console.log("Each 3rd Even element of random Array:")
       let arr = [];
       let n = 0;
-      for(let i = 0; i<len; i++){
+      for (let i = 0; i < len; i++) {
         var ran = Math.round((Math.random() * 1000));
         arr[i] = ran;
       }
-      for(let j = 0; j<len; j=j+3){
-        if (arr[j] % 2 == 0) console.log('Array['+j+']: '+arr[j]);
+      for (let j = 0; j < len; j = j + 3) {
+        if (arr[j] % 2 == 0) console.log('Array[' + j + ']: ' + arr[j]);
       }
     }
 
-    function task13(){
-        let len = prompt("Enter Array length:");
+    function task13() {
+      let len = prompt("Enter Array length:");
       console.log("Each 3rd Even element of random Array:")
       let arr = [];
       let newArr = [];
       let n = 0;
-      for(let i = 0; i<len; i++){
+      for (let i = 0; i < len; i++) {
         var ran = Math.round((Math.random() * 1000));
         arr[i] = ran;
       }
-      for(let j = 0; j<len; j=j+3){
+      for (let j = 0; j < len; j = j + 3) {
         if (arr[j] % 2 == 0) {
-            console.log('Array['+j+']: '+arr[j]);
-            newArr.push(arr[j]);
+          console.log('Array[' + j + ']: ' + arr[j]);
+          newArr.push(arr[j]);
         }
       }
-      console.log('New Array of even values: ', newArr)
+      console.log('New Array of even values: ', newArr);
     }
 
-
-    </script>
+  </script>
 </body>
+
 </html>

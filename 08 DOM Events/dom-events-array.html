@@ -1,70 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
-<p>Enter words to filter:</p>
-<input type="text" id="filter">
-<button id="apply">Apply</button>
-<p>Enter some text:</p>
-<input type="text" id="inp">
-<button id="btn">Check</button>
-<p id="out"></p>
+    <p>Enter words to filter:</p>
+    <input type="text" id="filter">
+    <button id="apply">Apply</button>
+    <p>Enter some text:</p>
+    <input type="text" id="inp">
+    <button id="btn">Check</button>
+    <p id="out"></p>
 
-<script>
+    <script>
 
+        let bad = [];
 
-const bad = [];
-    
-const filter = document.getElementById('filter');
-const apply = document.getElementById('apply');
-const input = document.getElementById('inp');
-const btn = document.getElementById('btn');
+        const filter = document.getElementById('filter');
+        const apply = document.getElementById('apply');
+        const input = document.getElementById('inp');
+        const btn = document.getElementById('btn');
 
-let fil = [];
-apply.onclick = function() {
-    fil = filter.value.split(' ');
-    console.log(`You set the filter: ${fil}`);
-}
-  
-btn.onclick = function() {
-    let sent = input.value.split(' ');
-    
-    for (let i = 0; i < fil.length; i++) {
-        for (let j = 0; j < sent.length; j++) {
-            if (fil[i] === sent[j]) {
-                if (!bad.includes(sent[j])) {
-                    bad.push(sent[j])
+        let fil = [];
+        apply.onclick = function () {
+            fil = filter.value.split(' ');
+            console.log(`You set the filter: ${fil}`);
+        }
+
+        btn.onclick = function () {
+            let sent = input.value.split(' ');
+
+            for (let i = 0; i < fil.length; i++) {
+                for (let j = 0; j < sent.length; j++) {
+                    if (fil[i] === sent[j]) {
+                        if (!bad.includes(sent[j])) {
+                            bad.push(sent[j])
+                        }
+                    }
                 }
             }
+            if (bad.length !== 0) {
+                document.body.insertBefore(ale, pe);
+                console.log(`You put bad words: ${bad}`);
+                alert('ALERT! Bad words detected!');
+            }
         }
-    }
-    if (bad.length !== 0) {
-    document.body.insertBefore(ale, pe)
-    console.log(`You put bad words: ${bad}`);
-    alert('ALERT! Bad words detected!');
-    }
-}
 
-const out = document.getElementById('out');
-    
-const pe = document.createElement('p');
-const ale = document.createElement('h2');
-ale.textContent = 'ALERT!';
+        const out = document.getElementById('out');
 
-pe.innerHTML = "Your text here:";
-document.body.appendChild(pe);
-    
-input.onkeyup = function() {
-    out.innerHTML = input.value
-};
+        const pe = document.createElement('p');
+        const ale = document.createElement('h2');
+        ale.textContent = 'ALERT!';
 
-document.body.insertBefore(out, null);
+        pe.innerHTML = "Your text here:";
+        document.body.appendChild(pe);
 
-    
-    
-</script>
+        input.onkeyup = function () {
+            out.innerHTML = input.value;
+        };
+
+        document.body.insertBefore(out, null);
+
+    </script>
 </body>
+
 </html>
