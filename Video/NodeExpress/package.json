@@ -1,5 +1,5 @@
 {
-  "name": "nodeexpress",
+  "name": "okten-express",
   "version": "1.0.0",
   "description": "code from video lesson on Node.js",
   "main": "app.js",

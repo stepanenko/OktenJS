@@ -1,5 +1,5 @@
 {
-  "name": "nodestatic",
+  "name": "okten-nodestatic",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,9 +9,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "author": "Serhiy",
   "license": "ISC"
 }

@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 
@@ -70,4 +71,4 @@ app.post('/reg', (req, res) => {
   res.send(req.body);
 })
 
-app.listen(3000, () => console.log('Listening...'));
+app.listen(3000, () => console.log('Listening on port 3000...'));

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events</title>
+  <style>
+    /* #box {
+    background: #52aa5e;
+    width: 100px;
+    height: 100px;
+  }
+  #red {
+    background: red;
+    width: 200px;
+    height: 200px;
+  }
+  #blue {
+    background: blue;
+    width: 150px;
+    height: 150px;
+  }
+  #green {
+    background: green;
+    width: 100px;
+    height: 100px;
+  } */
+    #drag {
+      background: #069494;
+      position: relative;
+      left: 13px;
+      height: 80px;
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <div id="box"></div>
+<input type="text" id='inp'>
+<p id='out'>Hello World</p>
+
+<div id="red">
+  <div id="blue">
+    <div id="green"></div>
+  </div>
+</div> -->
+
+  <div id="drag"></div>
+
+  <script>
+
+    // const box = document.getElementById('box');
+    // Changing backgr color on mouse over:
+    // box.onmouseover = function () {
+    //   this.style.backgroundColor = 'green';
+    // }
+    // box.onmouseleave = function () {
+    //   this.style.backgroundColor = 'yellow';
+    // }
+
+    // Changing BG colors when press and hold and move cursor:
+    // box.onmousedown = function(event) {
+    //   if (event.button == 0) {
+    //     box.onmousemove = function (e) {
+    //       this.style.backgroundColor = `rgb(${e.pageX},${e.pageY},${e.pageX}`;
+    //     }
+    //   }
+    // }
+    // box.onmouseup = function () {
+    //   box.onmousemove = null;
+    //   this.style.backgroundColor = null;
+    // }
+
+    // const inp = document.getElementById('inp'),
+    //       out = document.getElementById('out');
+
+    // Changing value of P by typing in Input:
+    // inp.oninput = function (event) {
+    //   out.innerHTML = this.value;  // printing value to 'p'
+    //   box.style.background = this.value;  //changing color of box
+    // }
+
+    // Changing p into input and reverse:
+    // out.ondblclick = function () {
+    //   let input = document.createElement('input');
+    //   //input.value = this.innerText;
+    //   document.body.replaceChild(input, out);
+
+    //   input.onblur = function () {
+    //     out.innerText = input.value;
+    //     document.body.replaceChild(out, input)
+    //   }
+    // }
+
+    // // 
+
+    // const red = document.getElementById('red');
+    // const blue = document.getElementById('blue');
+    // const green = document.getElementById('green');
+
+    // red.onclick = function () {
+    //   console.log('red');
+    // }
+    // // blue.addEventListener('click', print);
+    // // function print() {
+    // //   console.log('blue')
+    // // }
+    // blue.onclick = function () {
+    //   console.log('blue');
+    // }
+    // green.onclick = function () {
+    //   console.log('green');
+    // }
+
+    const dragBox = document.getElementById('drag');
+
+    dragBox.onmousedown = function (e) {
+      dragBox.style.position = 'absolute';
+
+      document.onmousemove = function (event) {
+        dragBox.style.top = event.pageY + 'px';
+        dragBox.style.left = event.pageX + 'px';
+      }
+    }
+    dragBox.onmouseup = function () {
+      document.onmousemove = null;
+    }
+    console.dir(dragBox.offsetTop)
+
+  </script>
+</body>
+
+</html>

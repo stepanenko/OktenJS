@@ -1,3 +1,4 @@
+
 module.exports = class ControllerError extends Error {
   
   constructor(msg, status) {

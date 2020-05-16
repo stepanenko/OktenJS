@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const User = require('./models/User');
@@ -61,4 +62,4 @@ app.get('/user/:login', (req, res) => {
   res.send(users[principalIndex]);
 });
 
-app.listen(3000, () => console.log('Listening...'));
+app.listen(3000, () => console.log('Listening on port 3000...'));
