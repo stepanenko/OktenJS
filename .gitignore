@@ -1,12 +1,16 @@
 Video/NodeExpress/node_modules/
+Video/NodeExpress/package-lock.json
+
+Video/NodeMongoose/node_modules/
+Video/NodeMongoose/package-lock.json
+
 Video/NodeREST/node_modules/
-Video/Pug/node_modules/
+Video/NodeREST/package-lock.json
+
 Video/NodeStatic/node_modules/
+Video/NodeStatic/package-lock.json
+
+Video/Pug/node_modules/
+
 NodeJS/Task01/node_modules/
-Video/NodeMongoose/node_modules
-REST API JS.txt
-arrays functions + objects + class.txt
-firebase.txt
-interval.txt
-viktor.html
-task03acer.html
+NodeJS/Task01/package-lock.json
